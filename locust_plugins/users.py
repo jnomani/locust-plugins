@@ -111,8 +111,8 @@ class WebdriverUser(User):
     abstract = True
     _first_instance = True
 
-    def __init__(self, parent, headless=True):
-        super().__init__(parent)
+    def __init__(self, parent, headless=True, *args, **kwargs):
+        super().__init__(parent, *args, **kwargs)
         if WebdriverUser._first_instance:
             WebdriverUser._first_instance = False
             # kill old webdriver browser instances
